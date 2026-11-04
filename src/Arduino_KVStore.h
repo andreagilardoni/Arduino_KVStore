@@ -16,13 +16,13 @@
 
 using KVStore = Unor4KVStore;
 
-#elif defined(ARDUINO_PORTENTA_H7_M7) || defined(ARDUINO_NICLA_VISION) \
-    || defined(ARDUINO_OPTA) || defined(ARDUINO_GIGA)
+#elif (defined(ARDUINO_PORTENTA_H7_M7) || defined(ARDUINO_NICLA_VISION) \
+    || defined(ARDUINO_OPTA) || defined(ARDUINO_GIGA)) && defined(ARDUINO_ARCH_MBED)
 #include "kvstore/implementation/stm32h7.h"
 
 using KVStore = STM32H7KVStore;
 
-#elif defined(ARDUINO_PORTENTA_C33)
+#elif defined(ARDUINO_PORTENTA_C33) && defined(ARDUINO_ARCH_RENESAS)
 
 #include "kvstore/implementation/portentac33.h"
 
