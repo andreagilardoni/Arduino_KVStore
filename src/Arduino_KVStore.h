@@ -40,6 +40,11 @@ using KVStore = NinaKVStore;
 
 using KVStore = ESP32KVStore;
 
+#elif defined(ARDUINO_ARCH_ZEPHYR)
+
+#include "kvstore/implementation/zephyr.h"
+using KVStore = ZephyrKVStore;
+
 #else
 #error "Arduino KVStore is not supported on current platform"
 #endif
